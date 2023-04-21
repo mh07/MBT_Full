@@ -69,6 +69,7 @@ TeWindow("TeWindow").TeScreen("FR03 Flights").TeField("OrderNumber(protected)").
 TeWindow("TeWindow").TeScreen("FR03 Flights").TeField("OrderNumber(protected)").Output Checkpoint("CreatedOrderNum")
 AIUtil.SetContext TeWindow("terminal emulator:=Yes", "short name:=B")
 Order= AIUtil.FindTextBlock(micAnyText, micWithAnchorOnRight, AIUtil.FindTextBlock("Created.")).GetText
+Parameter("ShippingOrder")= Order
 TeWindow("TeWindow").TeScreen("FR03 Flights").SendKey TE_ENTER
 TeWindow("TeWindow").TeScreen("FR03 Flights").Sync
 TeWindow("TeWindow").TeScreen("FR03 Flights").TeField("Depart Date").SetCursorPos
