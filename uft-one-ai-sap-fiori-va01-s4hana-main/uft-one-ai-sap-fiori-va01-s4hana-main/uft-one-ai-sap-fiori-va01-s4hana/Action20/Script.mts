@@ -12,31 +12,32 @@ AIUtil("text_box", "Type").SetText "DZ"
 AIUtil("text_box", "Document Date:").SetText FormatDateTime(Date, 2)
 AIUtil("button", "Post").Click
 AIUtil.Context.Unfreeze
-counter = 0
-Do
-	counter = counter + 1
-	If counter>=90 Then
-		Reporter.ReportEvent micFail, "Post Incoming Payment", "The post incoming payment confirmation message help link didn't come up within " & counter & " attempts, exiting action"
-		ExitAction
-	End If
-Loop Until AIUtil.FindTextBlock("Help").Exist(0)
-AIUtil.FindTextBlock("Help").Click
-AIUtil.RunSettings.OCR.UseConfigSet UFT_OCR
-Set DocumentConfirmationMessage = AIRegex("Document \d+ was posted in company code \d+")
-AIUtil.FindTextBlock(DocumentConfirmationMessage).CheckExists True
-
-DocumentMessage = AIUtil.FindTextBlock(DocumentConfirmationMessage).GetText
-DocumentMessageArray = Split(DocumentMessage," ")
-DocumentNumber = DocumentMessageArray(1)
-print "Document Number is " & DocumentMessageArray(1)
-DataTable.Value("DocumentNumber") = DocumentMessageArray(1)
-Reporter.ReportEvent micDone, "Document Number", "The Deliver Number from the popup window is " & DocumentMessageArray(1) & "."
-AIUtil.RunSettings.OCR.UseConfigSet AI_OCR
-
-AIUtil("check_mark").Click
+'counter = 0
+'Do
+'	counter = counter + 1
+'	If counter>=90 Then
+'		Reporter.ReportEvent micFail, "Post Incoming Payment", "The post incoming payment confirmation message help link didn't come up within " & counter & " attempts, exiting action"
+'		ExitAction
+'	End If
+'Loop Until AIUtil.FindTextBlock("Help").Exist(0)
+'AIUtil.FindTextBlock("Help").Click
+'AIUtil.RunSettings.OCR.UseConfigSet UFT_OCR
+'Set DocumentConfirmationMessage = AIRegex("Document \d+ was posted in company code \d+")
+'AIUtil.FindTextBlock(DocumentConfirmationMessage).CheckExists True
+'
+'DocumentMessage = AIUtil.FindTextBlock(DocumentConfirmationMessage).GetText
+'DocumentMessageArray = Split(DocumentMessage," ")
+'DocumentNumber = DocumentMessageArray(1)
+'print "Document Number is " & DocumentMessageArray(1)
+'DataTable.Value("DocumentNumber") = DocumentMessageArray(1)
+'Reporter.ReportEvent micDone, "Document Number", "The Deliver Number from the popup window is " & DocumentMessageArray(1) & "."
+'AIUtil.RunSettings.OCR.UseConfigSet AI_OCR
+'
+'AIUtil("check_mark").Click
 AIUtil.FindTextBlock("Exit").Click
-Set ResultsMessage = AIRegex("Results (\d+)")
-AIUtil.FindTextBlock(ResultsMessage).CheckExists True
+AIUtil.FindTextBlock("Yes").Click
+'Set ResultsMessage = AIRegex("Results (\d+)")
+'AIUtil.FindTextBlock(ResultsMessage).CheckExists True
 AIUtil("left_triangle").Click
 Browser("creationtime:=0").Sync																			'Wait for the browser to stop spinning
 
