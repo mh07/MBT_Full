@@ -4,11 +4,11 @@ AIUtil.FindText("CHECKOUT").Click
 AIUtil("button", "PAY NOW").Click
 
 AIUtil.SetContext Device("micclass:=Device")
-'get the tracking number as output parameter to pass into SAP OTC
-tNumber = AIUtil.FindTextBlock(micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Thank you for buying")).GetText
-A = Split(tNumber, " ")
+'get the order number as output parameter to pass into SAP OTC
+oNumber = AIUtil.FindTextBlock(micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Payment confirmation number")).GetText
+A = Split(oNumber, " ")
 B = A(3)
-Parameter("oTrackingNumber") = B
-Print Parameter("oTrackingNumber")
+Parameter("oOrderNumber") = B
+Print Parameter("oOrderNumber")
 
 AIUtil("button", "Ok").Click
