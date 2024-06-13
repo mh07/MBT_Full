@@ -18,18 +18,10 @@ objSendKey.SendKeys "{TAB}"
 objSendKey.SendKeys "{TAB}"
 objSendKey.SendKeys "{TAB}"
 'PICKING QUANTITY = same value ordered
-objSendKey.SendKeys "1"
+objSendKey.SendKeys DataTable.Value("OrderQuantity", "05_va01_order_details")
 
 
 AIUtil.FindTextBlock("Post Goods Issue").Click
-'checkmark = AIUtil("check_mark").Exist
-'If checkmark Then
-'	AIUtil("check_mark").Click
-'End If
-AIUtil.FindTextBlock("Exit").Click
-AIUtil.FindTextBlock("Exit").Click
-AIUtil.FindTextBlock("Yes").Click
-AIUtil.FindTextBlock("Help").Click
 AIUtil("check_mark").Click
 AIUtil.FindTextBlock("Outbound Delivery " & DataTable.Value("DeliveryNumber") & " has been saved").CheckExists True
 AIUtil.FindTextBlock("Exit").Click
