@@ -18,6 +18,7 @@ Reporter.ReportEvent micDone, "Billing Number", "The Billing Number from the Sta
 AIUtil.FindTextBlock("Exit").Click
 'Set ResultsMessage = AIRegex("Results (\d+)")
 'AIUtil.FindTextBlock(ResultsMessage).CheckExists True
+wait 2
 AIUtil("left_triangle").Click
 Browser("creationtime:=0").Sync																			'Wait for the browser to stop spinning
 
