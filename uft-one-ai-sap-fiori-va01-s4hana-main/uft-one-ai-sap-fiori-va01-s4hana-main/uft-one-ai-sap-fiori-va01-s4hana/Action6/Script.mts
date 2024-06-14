@@ -7,12 +7,12 @@ AIUtil("search", micAnyText, micFromBottom, 1).CheckExists True
 wait 1
 set objSendKey=CreateObject("WScript.shell")
 objSendKey.SendKeys "+{TAB}"
-objSendKey.SendKeys DataTable.Value("Item", "05_va01_order_details")
+objSendKey.SendKeys "10"
 objSendKey.SendKeys "{TAB}"
-objSendKey.SendKeys DataTable.Value("Material", "05_va01_order_details")
+objSendKey.SendKeys "EWMS4-02"
 objSendKey.SendKeys "{TAB}"
 objSendKey.SendKeys "{TAB}"
-objSendKey.SendKeys DataTable.Value("OrderQuantity", "05_va01_order_details")
+objSendKey.SendKeys "1"
 objSendKey.SendKeys "{TAB}"
-objSendKey.SendKeys DataTable.Value("UnitOfMeasure", "05_va01_order_details")
+objSendKey.SendKeys "PC"
 
