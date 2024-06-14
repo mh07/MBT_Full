@@ -29,3 +29,4 @@ Do
 Loop Until AIUtil.FindTextBlock("Create Sales Documents").Exist(10)
 
 AIUtil("text_box", "Order Type:").CheckExists True
+
