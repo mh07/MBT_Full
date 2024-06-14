@@ -5,6 +5,7 @@ AIUtil.SetContext AppContext																'Tell the AI engine to point at the 
 
 'Sometimes the Fiori application isn't responsive enough to use the complex search statement, the entering of the value into the field overruns the app
 'AIUtil("search").Search "va01"
+wait 2
 AIUtil("search").Click
 AIUtil("text_box", "Search").SetText "va01"
 AIUtil("search").Click
