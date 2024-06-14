@@ -22,6 +22,7 @@ objSendKey.SendKeys DataTable.Value("OrderQuantity", "05_va01_order_details")
 
 
 AIUtil.FindTextBlock("Post Goods Issue").Click
+wait 2
 AIUtil("check_mark").Click
 AIUtil.FindTextBlock("Outbound Delivery " & DataTable.Value("DeliveryNumber") & " has been saved").CheckExists True
 AIUtil.FindTextBlock("Exit").Click
