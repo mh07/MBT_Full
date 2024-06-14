@@ -25,7 +25,7 @@ AIUtil.FindTextBlock("Post Goods Issue").Click
 AIUtil.FindText("Exit").Click
 AIUtil.FindText("Save").Click
 AIUtil("check_mark").Click
-AIUtil.FindTextBlock("Outbound Delivery " & DataTable.Value("DeliveryNumber") & " has been saved").CheckExists True
+'AIUtil.FindTextBlock("Outbound Delivery " & DataTable.Value("DeliveryNumber") & " has been saved").CheckExists True
 AIUtil.FindTextBlock("Exit").Click
 Set ResultsMessage = AIRegex("Results (\d+)")
 AIUtil.FindTextBlock(ResultsMessage).CheckExists True

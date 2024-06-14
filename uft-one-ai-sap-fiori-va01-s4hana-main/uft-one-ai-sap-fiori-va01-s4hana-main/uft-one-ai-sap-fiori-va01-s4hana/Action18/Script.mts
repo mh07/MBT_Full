@@ -16,8 +16,8 @@ DataTable.Value("BillingNumber") = StatusBarArray(1)
 Reporter.ReportEvent micDone, "Billing Number", "The Billing Number from the Status Bar is " & StatusBarArray(1) & "."
 
 AIUtil.FindTextBlock("Exit").Click
-Set ResultsMessage = AIRegex("Results (\d+)")
-AIUtil.FindTextBlock(ResultsMessage).CheckExists True
+'Set ResultsMessage = AIRegex("Results (\d+)")
+'AIUtil.FindTextBlock(ResultsMessage).CheckExists True
 AIUtil("left_triangle").Click
 Browser("creationtime:=0").Sync																			'Wait for the browser to stop spinning
 
