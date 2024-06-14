@@ -18,7 +18,7 @@ objSendKey.SendKeys "{TAB}"
 objSendKey.SendKeys "{TAB}"
 objSendKey.SendKeys "{TAB}"
 'PICKING QUANTITY = same value ordered
-objSendKey.SendKeys DataTable.Value("OrderQuantity", "05_va01_order_details")
+objSendKey.SendKeys "1"
 
 
 AIUtil.FindTextBlock("Post Goods Issue").Click
