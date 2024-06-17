@@ -7,5 +7,5 @@ AIUtil("text_box", "Cust. Ref. Date:").SetText FormatDateTime((Date-1), 2)
 AIUtil("text_box", "Ship-To Party:").SetText "EWM17-CU02"
 AIUtil("text_box", "Sold-To Party:").SetText "EWM17-CU02"
 
-AIUtil("text_box", "Standard Order:").SetText Parameter("iOrderNumber")
+AIUtil("text_box", "Standard Order:").SetText Parameter("iiOrderNumber")
 'AIUtil.Context.UnFreeze 
